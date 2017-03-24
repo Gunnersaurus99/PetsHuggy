@@ -21,6 +21,7 @@ gem 'paperclip', '~> 5.0.0.beta1'
 gem 'dropzonejs-rails'
 gem 'figaro', '~> 1.1.0'
 gem 'tzinfo-data', platforms:[:mingw, :mswin, :x64_mingw, :jruby]
+gem 'aws-sdk', '~> 2.3'
 
 group :production do
   gem 'pg'
