@@ -12,15 +12,15 @@
                 </div>
             </div>
 
-            <div class="panel-body">
-                <%= form_for @photo, html:{multipart: true,class:"dropzone", id:"my-dropzone" } do |f| %> 
-
+            <div class="panel-body">          
+                <%= form_for @photo, html:{multipart: true,class:"dropzone", id:"my-dropzone", required: "true" } do |f| %> 
+                    
                     <%= f.hidden_field :listing_id, value: @listing.id %>
                     <div class="dz-message needsclick">
                         <h3>ファイルをここにドロップしてください。</h3>
                         <strong>アップロードするにはここをクリックしてください</strong>
                     </div>
-
+                    
                     <div class="fallback">
                         <%= f.file_field :image %>
                         <%= f.submit "Upload image" %>
@@ -60,7 +60,7 @@
       });
 
       var previewElement;
-      // 条件式 ? 式1 : 式2条件式の値がtrue=>式1、false=>式2返します。
+      // 条件式 ? 式1 : 式2　条件式の値がtrue=>式1、false=>式2返します。
       //parentNode => 親ノード（一つ上のhtml要素)を取得.
       //(void 0) => 何も処理しない
       // リスト（親ノード）から、プレビュー要素を消すという記述

@@ -21,10 +21,12 @@
  <div class="container">
    <div class="row">
      <div class="col-lg-3 col-md-4">
+     <% if @user.image %>
        <div class="user-profile row-space-4 text-center">
          <%= image_tag @user.image, class: "profile-full img-circle" %>
        </div>
-
+      <% else %>
+      <% end %>
        <div class="panel panel-default verification hidden-xs hidden-sm">
          <div class="panel-heading">
            認証済みID

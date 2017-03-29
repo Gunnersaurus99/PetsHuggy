@@ -1,12 +1,13 @@
 class ListingsController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_listing, only: [:edit,:basics,:update,:description,:address,:price,:photos,:calender,:bankaccount,:publish]
+  before_action :set_listing, only: [:show,:edit,:basics,:update,:description,:address,:price,:photos,:calender,:bankaccount,:publish]
 
   def index
     @listings = current_user.listings
   end
 
   def show
+    @photos = @listing.photos
   end
 
   def create
@@ -64,6 +65,7 @@ class ListingsController < ApplicationController
 
 
   private
+
    def listing_params
     params.require(:listing).permit(:pet_type,:home_type,:breeding_years,:pet_size,:price_per_night,:address)
   end
